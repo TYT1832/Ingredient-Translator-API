@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+  const key = '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'
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Only POST allowed" });
   }
@@ -14,7 +15,7 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
+        "Authorization": `Bearer ${key}`
       },
       body: JSON.stringify({
         model: "gpt-4o-mini",
